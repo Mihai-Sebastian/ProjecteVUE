@@ -12,7 +12,7 @@
                 <p>“Descobreix l'aplicació web SPA creada amb Vue, que integra funcionalitats com una calculadora completa, consultes d'API amb fetch i axios, i un disseny adaptable i fàcil de navegar.”</p>
               </blockquote>
               <figcaption class="mt-6 text-sm/6 text-gray-300">
-                <strong class="font-semibold text-white">Equip de Desenvolupament,</strong> Creadors de l'Aplicació
+                <strong class="font-semibold text-white">MihaiSebastian,</strong> Creador de l'Aplicació
               </figcaption>
             </figure>
           </div>
