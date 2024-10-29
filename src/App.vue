@@ -1,18 +1,19 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
+import Header from "./components/Header.vue";
+import Footer from "./components/Footer.vue";
 </script>
 
 <template>
-  <header>
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/Calculadora">Calculadora</RouterLink>
-        <RouterLink to="/api-fetch">Api Fetch</RouterLink>
-        <RouterLink to="/api-axios">Api Axios</RouterLink>
-      </nav>
-  </header>
+  <div class="flex min-h-screen flex-col">
+    <Header />
 
-  <RouterView />
+    <main class="flex-grow">
+      <RouterView />
+    </main>
+
+    <Footer />
+  </div>
 </template>
 
 <style scoped>
