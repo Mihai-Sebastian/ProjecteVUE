@@ -47,7 +47,22 @@
 <script setup>
 import {ref} from 'vue'
 const displayValue = ref('0')
+const actualValue = ref('0')
 let lastOperation = false
+
+function clearEntry() {
+  if (actualValue.value){
+
+  }
+}
+
+function inputDecimal() {
+  const lastNumber = displayValue.value.split(/[\+\-\*\/]/).pop();
+  if (!lastNumber.includes('.')) {
+    displayValue.value += '.';
+    lastOperation = false;
+  }
+}
 
 function clearDisplay() {
   displayValue.value = '0'
@@ -55,7 +70,6 @@ function clearDisplay() {
 }
 
 function inputDigit(digit) {
-  console.log(lastOperation)
   if (lastOperation === true){
     displayValue.value = digit
     lastOperation = false
@@ -70,12 +84,15 @@ function inputDigit(digit) {
 
 function inputOperation(operator) {
   const operators = ['+', '-', '*', '/'];
-  if (operators.includes(displayValue.value.slice(-1))) {
-    displayValue.value = displayValue.value.slice(0, -1) + operator
-  }
-  else {
-    displayValue.value += operator
-    lastOperation = false
+  // Comprova si l'últim caràcter és un operador
+  if (operators.includes(displayValue.value.toString().slice(-1))) {
+    // Si l'últim caràcter és un operador, el substitueix
+    displayValue.value = displayValue.value.slice(0, -1) + operator;
+    lastOperation = false;
+  } else {
+    // Si no hi ha operador, afegeix el nou operador
+    displayValue.value += operator;
+    lastOperation = false;
   }
 }
 
@@ -88,6 +105,7 @@ function deleteDigit() {
   if (displayValue.value === '') {
     displayValue.value = '0'
   }
+
 }
 
 </script>
