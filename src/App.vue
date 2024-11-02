@@ -9,7 +9,12 @@ const route = useRoute();
 const backgroundClass = computed(() => {
   switch (route.path) {
     case '/calculadora':
-      return 'bg-cyan-900';
+      return 'bg-gradient-to-r from-blue-900 to-teal-800';
+    case '/api-fetch':
+      return 'bg-gradient-to-r from-teal-800 to-blue-900';
+    case '/api-axios':
+      return 'bg-gradient-to-r from-blue-900 to-teal-800';
+
     default:
       return 'bg-white';
   }

@@ -18,7 +18,7 @@ import { defineComponent, h } from 'vue'
 const navigation = [
   {
     name: 'Facebook',
-    href: '#',
+    href: 'https://www.facebook.com/login/?next=https%3A%2F%2Fwww.facebook.com%2F%3Flocale%3Des_ES',
     icon: defineComponent({
       render: () =>
           h('svg', { fill: 'currentColor', viewBox: '0 0 24 24' }, [
@@ -32,7 +32,7 @@ const navigation = [
   },
   {
     name: 'Instagram',
-    href: '#',
+    href: 'https://www.instagram.com/',
     icon: defineComponent({
       render: () =>
           h('svg', { fill: 'currentColor', viewBox: '0 0 24 24' }, [
@@ -46,7 +46,7 @@ const navigation = [
   },
   {
     name: 'X',
-    href: '#',
+    href: 'https://x.com/?lang=es',
     icon: defineComponent({
       render: () =>
           h('svg', { fill: 'currentColor', viewBox: '0 0 24 24' }, [
@@ -58,7 +58,7 @@ const navigation = [
   },
   {
     name: 'GitHub',
-    href: '#',
+    href: 'https://github.com/Mihai-Sebastian',
     icon: defineComponent({
       render: () =>
           h('svg', { fill: 'currentColor', viewBox: '0 0 24 24' }, [
@@ -72,7 +72,7 @@ const navigation = [
   },
   {
     name: 'YouTube',
-    href: '#',
+    href: 'https://www.youtube.com/',
     icon: defineComponent({
       render: () =>
           h('svg', { fill: 'currentColor', viewBox: '0 0 24 24' }, [

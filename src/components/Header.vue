@@ -30,7 +30,7 @@
         <div class="flex items-center justify-between">
           <RouterLink to="/" class="-m-1.5 p-1.5">
             <span class="sr-only">Your Company</span>
-            <img class="h-8 w-auto" src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=500" alt="" />
+            <img class="h-8 w-auto" src="https://upload.wikimedia.org/wikipedia/commons/2/21/Megami_Tensei_logo.png" alt="" />
           </RouterLink>
           <button type="button" class="-m-2.5 rounded-md p-2.5 text-gray-400" @click="mobileMenuOpen = false">
             <span class="sr-only">Close menu</span>
@@ -40,12 +40,20 @@
         <div class="mt-6 flow-root">
           <div class="-my-6 divide-y divide-gray-500/25">
             <div class="space-y-2 py-6">
-              <RouterLink v-for="item in navigation" :key="item.name" :to="item.href" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-white hover:bg-gray-800">
+              <RouterLink
+                  v-for="item in navigation"
+                  :key="item.name"
+                  :to="item.href"
+                  class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-white hover:bg-gray-800"
+                  @click="closeMobileMenu">
                 {{ item.name }}
               </RouterLink>
             </div>
             <div class="py-6">
-              <RouterLink to="/login" class="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-white hover:bg-gray-800">
+              <RouterLink
+                  to="/login"
+                  class="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-white hover:bg-gray-800"
+                  @click="closeMobileMenu">
                 Log in
               </RouterLink>
             </div>
@@ -70,4 +78,8 @@ const navigation = [
 ]
 
 const mobileMenuOpen = ref(false)
+
+const closeMobileMenu = () => {
+  mobileMenuOpen.value = false;
+}
 </script>
