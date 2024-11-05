@@ -49,7 +49,7 @@ const displayValue = ref('0')
 let lastOperation = false
 
 function inputDecimal() {
-  const lastNumber = displayValue.value.split(/[\+\-\*\/]/).pop();
+  const lastNumber = displayValue.value.split(/[\+\-\*\/\%]/).pop();
   if (!lastNumber.includes('.')) {
     displayValue.value += '.';
     lastOperation = false;
@@ -114,12 +114,11 @@ function deleteDigit() {
     lastOperation = false
   }
 }
-
 function toggleSign() {
   if (displayValue.value === '0') {
     return
   }
   displayValue.value = -parseFloat(displayValue.value)
-
+  lastOperation = false
 }
 </script>
